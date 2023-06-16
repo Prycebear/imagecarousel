@@ -1,0 +1,11 @@
+#ImageCard{
+    background-color: aquamarine;
+    border: 2px solid red;
+    overflow: hidden;
+    height: 50%;
+}
+
+#AnimalImg{
+    height: 100%;
+    width: 100%;
+}

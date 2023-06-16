@@ -1,23 +1,54 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from "react";
+import ImageCard from './Components/ImageCard';
+
+
 
 function App() {
+  let num = 0;
+  const images = [];
+  images.push("https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg");
+  images.push("https://images.pexels.com/photos/17811/pexels-photo.jpg");
+  images.push("https://images.pexels.com/photos/567540/pexels-photo-567540.jpeg");
+  images.push("https://images.pexels.com/photos/2295744/pexels-photo-2295744.jpeg");
+  images.push("https://images.pexels.com/photos/3608263/pexels-photo-3608263.jpeg");
+  images.push("https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg");
+  images.push("https://images.pexels.com/photos/1059823/pexels-photo-1059823.jpeg");
+
+  
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <div>
+        <h1>Basic Image Carousel</h1>
+      </div>
+      <div class="row">
+    <div class="col-sm-4">
+      <h3>Previous image</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      {/* <ImageCard id = "AnimalCard" animal = {leftImage}/> */}
+      <button id = "imgButton">Previous Image</button>
+    </div>
+    <div class="col-sm-4">
+      <h3>Current image</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <ImageCard id = "AnimalCard" animal = {images[num]}/>
+      <button id = "imgButton">Random Image</button>
+    </div>
+    <div class="col-sm-4">
+      <h3>Next image</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      {/* <ImageCard id = "AnimalCard" animal = {rightImage}/> */}
+      <button id = "imgButton">Next Image</button>
+    </div>
+    </div>
     </div>
   );
 }
