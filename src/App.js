@@ -32,6 +32,10 @@ function App() {
     setImgValue(imageVal => imageVal-1);
     }
   }
+
+  let random=()=>{
+      setImgValue(imageVal=>Math.floor(Math.random()*images.length-1));
+  }
   // useEffect(() => {
   //     imageVal;
   // });
@@ -51,21 +55,21 @@ function App() {
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
       <ImageCard id = "AnimalCard" animal = {images[imageVal-1]}/>
-      <button id = "imgButton" onClick={dincrement}>Previous Image</button>
+      <button id = "imgButton" onClick={dincrement}>&larr;</button>
     </div>
     <div class="col-sm-4">
       <h3>Current image</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
       <ImageCard id = "AnimalCard" animal = {images[imageVal]}/>
-      <button id = "imgButton">Random Image</button>
+      <button id = "imgButton" onClick = {random}>Random Image</button>
     </div>
     <div class="col-sm-4">
       <h3>Next image</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
       <ImageCard id = "AnimalCard" animal = {images[imageVal+1]}/>
-      <button id = "imgButton" onClick={increment}>Next Image</button>
+      <button id = "imgButton" onClick={increment}>&rarr;</button>
     </div>
     </div>
     </div>
